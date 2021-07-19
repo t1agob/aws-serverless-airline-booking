@@ -1,4 +1,4 @@
-name: AWS CodePipeline path-based trigger action - Project B
+name: AWS CodePipeline path-based trigger action - Serverless Airline Catalog
 
 # Controls when the workflow will run
 on:
