@@ -13,6 +13,7 @@ class FlightReservationException(Exception):
     pass
 
 
+
 class FlightFullyBookedException(FlightReservationException):
     pass
 
