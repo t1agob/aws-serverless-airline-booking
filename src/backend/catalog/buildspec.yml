@@ -12,7 +12,6 @@ phases:
   build:
     commands:
       - sam package --template-file template.yaml --s3-bucket $PACKAGE_BUCKET --output-template-file packaged-template.yaml
-      - ls
 
 artifacts:
   discard-paths: yes
