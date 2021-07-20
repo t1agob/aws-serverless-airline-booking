@@ -15,20 +15,9 @@ phases:
 artifacts:
   discard-paths: yes
   files:
-    - src/backend/catalog/.aws-sam/build/template.yaml
-  secondary-artifacts:
-    artifacts:
-      base-directory: 'src/backend/catalog/.aws-sam/build'
-      files:
-        - '**/*'
-      discard-paths: yes
-      
-    # reserve-flight:
-    #   base-directory: 'src/backend/catalog/.aws-sam/build/ReserveFlight'
-    #   files:
-    #     - '**/*'
-    #   discard-paths: yes
+    - '**/*'
+  base-directory: 'src/backend/catalog/.aws-sam/build'
 
 cache:
   paths:
-    - src/backend/catalog/.aws-sam/cache
+    - src/backend/catalog/.aws-sam/cache/**/*
