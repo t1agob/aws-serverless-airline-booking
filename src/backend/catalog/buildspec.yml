@@ -17,17 +17,17 @@ artifacts:
   files:
     - src/backend/catalog/.aws-sam/build/template.yaml
   secondary-artifacts:
-    release-flight:
-      base-directory: 'src/backend/catalog/.aws-sam/build/ReleaseFlight'
+    artifacts:
+      base-directory: 'src/backend/catalog/.aws-sam/build'
       files:
         - '**/*'
       discard-paths: yes
       
-    reserve-flight:
-      base-directory: 'src/backend/catalog/.aws-sam/build/ReserveFlight'
-      files:
-        - '**/*'
-      discard-paths: yes
+    # reserve-flight:
+    #   base-directory: 'src/backend/catalog/.aws-sam/build/ReserveFlight'
+    #   files:
+    #     - '**/*'
+    #   discard-paths: yes
 
 cache:
   paths:
