@@ -7,13 +7,15 @@ phases:
   pre_build:
     commands:
       - cd src/backend/catalog/
-      - pip install -r src/release-flight/requirements.txt
 
   build:
-    commands:
-      - sam package --template-file template.yaml --s3-bucket $PACKAGE_BUCKET --output-template-file packaged-template.yaml
+    commands:       
+      - sam build --parallel --cached
 
 artifacts:
   discard-paths: yes
   files:
-    - src/backend/catalog/packaged-template.yaml
+    - src/backend/catalog/.aws-sam/build/template.yaml
+  cache:
+    paths:
+      - src/backend/catalog/.aws-sam/cache
