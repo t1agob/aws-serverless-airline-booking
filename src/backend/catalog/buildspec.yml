@@ -19,6 +19,7 @@ phases:
 artifacts:
   files:
     - 'src/backend/catalog/packaged-template.yaml'
+  discard-paths: yes
 
 cache:
   paths:
