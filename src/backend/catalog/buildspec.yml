@@ -13,7 +13,6 @@ phases:
       - sam build --parallel --cached
 
 artifacts:
-  discard-paths: yes
   files:
     - '**/*'
   base-directory: 'src/backend/catalog/.aws-sam/build'
