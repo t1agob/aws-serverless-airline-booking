@@ -16,6 +16,7 @@ artifacts:
   discard-paths: yes
   files:
     - src/backend/catalog/.aws-sam/build/template.yaml
-  cache:
-    paths:
-      - src/backend/catalog/.aws-sam/cache
+
+cache:
+  paths:
+    - src/backend/catalog/.aws-sam/cache
