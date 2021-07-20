@@ -16,6 +16,13 @@ artifacts:
   discard-paths: yes
   files:
     - src/backend/catalog/.aws-sam/build/template.yaml
+  secondary-artifacts:
+    release-flight:
+      files:
+        - src/backend/catalog/.aws-sam/build/ReleaseFlight/**
+    reserve-flight:
+      files:
+        - src/backend/catalog/.aws-sam/build/ReserveFlight/**
 
 cache:
   paths:
