@@ -1,0 +1,19 @@
+name: Manually triggered workflow
+on:
+  workflow_dispatch:
+    inputs:
+      featurebranch:
+        description: 'Feature branch to merge to master'
+        required: true
+      
+jobs:
+  merge_to_master:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge to master
+        uses: devmasx/merge-branch@v1.3.1
+        with:
+          type: now
+          from_branch: ${{ github.event.inputs.featurebranch }}
+          target_branch: master
+          github_token: ${{ github.token }}
