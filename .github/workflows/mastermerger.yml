@@ -22,6 +22,6 @@ jobs:
         uses: michelmelo/merge-branch@1.2.1
         with:
           type: now
-          GITHUB_TOKEN: ${{ github.token }}
-          FROM_BRANCH: ${{ github.event.inputs.featurebranch }}
-          TO_BRANCH: master
+          github_token: ${{ github.token }}
+          from_branch: ${{ github.event.inputs.featurebranch }}
+          target_branch: master
