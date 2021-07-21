@@ -8,7 +8,6 @@ session = boto3.Session()
 dynamodb = session.resource('dynamodb')
 table = dynamodb.Table(os.environ['FLIGHT_TABLE_NAME'])
 
-
 class FlightReservationException(Exception):
     pass
 
