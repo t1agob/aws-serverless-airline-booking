@@ -19,5 +19,5 @@ jobs:
         with:
           type: now
           from_branch: ${{ github.event.inputs.featurebranch }}
-          target_branch: master
+          target_branch: release
           github_token: ${{ github.token }}
