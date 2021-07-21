@@ -30,18 +30,22 @@ jobs:
             catalog:
              - 'src/backend/catalog/**'
       
-      - name: AWS CodePipeline Trigger
-        # You may pin to the exact commit or the version.
-        # uses: zulhfreelancer/aws-codepipeline-action@492467f78d67ac2301e55e208326a8e9fbd23284
-        uses: zulhfreelancer/aws-codepipeline-action@v1.0.7
+      - name: Push changes in catalog to feature branch
         if: ${{ steps.filter.outputs.catalog == 'true' }}
-        with:
-          # AWS Region where the CodePipeline is located
-          aws-region: 'us-east-1'
-          # AWS Access Key ID to trigger CodePipeline
-          aws-access-key: ${{ secrets.AWS_PIPELINE_ACCESS_KEY }} 
-          # AWS Secret Key to trigger CodePipeline
-          aws-secret-key: ${{ secrets.AWS_PIPELINE_SECRET_KEY }}
-          # The name of the pipeline
-          pipeline-name: 'ServerlessAirlineCatalog'
+        run: git push origin HEAD:refs/heads/feature-branch/catalog --force
+      
+      # - name: AWS CodePipeline Trigger
+      #   # You may pin to the exact commit or the version.
+      #   # uses: zulhfreelancer/aws-codepipeline-action@492467f78d67ac2301e55e208326a8e9fbd23284
+      #   uses: zulhfreelancer/aws-codepipeline-action@v1.0.7
+      #   if: ${{ steps.filter.outputs.catalog == 'true' }}
+      #   with:
+      #     # AWS Region where the CodePipeline is located
+      #     aws-region: 'us-east-1'
+      #     # AWS Access Key ID to trigger CodePipeline
+      #     aws-access-key: ${{ secrets.AWS_PIPELINE_ACCESS_KEY }} 
+      #     # AWS Secret Key to trigger CodePipeline
+      #     aws-secret-key: ${{ secrets.AWS_PIPELINE_SECRET_KEY }}
+      #     # The name of the pipeline
+      #     pipeline-name: 'ServerlessAirlineCatalog'
       
