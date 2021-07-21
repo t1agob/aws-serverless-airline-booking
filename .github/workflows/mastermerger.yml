@@ -17,6 +17,10 @@ jobs:
       #     from_branch: ${{ github.event.inputs.featurebranch }}
       #     target_branch: master
       #     github_token: ${{ github.token }}
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.inputs.featurebranch }}
+
       - name: Opening pull request
         id: pull
         uses: michelmelo/merge-branch@1.2.1
