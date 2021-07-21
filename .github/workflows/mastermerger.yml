@@ -10,18 +10,14 @@ jobs:
   merge_to_master:
     runs-on: ubuntu-latest
     steps:
-      # - name: Merge to master
-      #   uses: devmasx/merge-branch@v1.3.1
-      #   with:
-      #     type: now
-      #     from_branch: ${{ github.event.inputs.featurebranch }}
-      #     target_branch: master
-      #     github_token: ${{ github.token }}
-      - name: Opening pull request
-        id: pull
-        uses: michelmelo/merge-branch@1.2.1
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.inputs.featurebranch }}
+
+      - name: Merge to master
+        uses: devmasx/merge-branch@v1.3.1
         with:
           type: now
-          github_token: ${{ github.token }}
           from_branch: ${{ github.event.inputs.featurebranch }}
           target_branch: master
+          github_token: ${{ github.token }}
